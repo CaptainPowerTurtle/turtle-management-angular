@@ -1,11 +1,13 @@
 language: node_js
 node_js:
-  - "lts/*"
+  - 12
 dist: trusty
 sudo: required
 branches:
         only:
-          - masterbefore_script:
-          - npm install -g @angular/cliscript:
-      - ng lint
-      - ng build --prod --base-href https://github.com/CaptainPowerTurtle/turtle-management-angular.git
+          - master
+before_script:
+  - npm install -g @angular/cli
+script:
+  - ng lint
+  - ng build --prod --base-href https://github.com/CaptainPowerTurtle/turtle-management-angular.git
